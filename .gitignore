@@ -1,0 +1,17 @@
+.alpackages/
+2
+.vscode/
+3
+ 
+4
+output/
+5
+.cache/
+6
+ 
+7
+*.app
+8
+*.zip
+9
+*.snapshots
