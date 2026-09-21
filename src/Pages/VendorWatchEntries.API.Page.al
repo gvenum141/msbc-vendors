@@ -1,4 +1,4 @@
-page 71007 "Vendor Watch Entries API"
+page 71000 "Vendor Watch Entries API"
 {
     PageType = API;
     SourceTable = "Vendor Watch Entry";

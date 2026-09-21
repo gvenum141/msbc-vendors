@@ -1,5 +1,13 @@
-codeunit 71006 "Vendor Watch Processor"
+/// <summary>
+/// Processes pending vendor watch entries.
+/// </summary>
+codeunit 71002 "Vendor Watch Processor"
 {
+    var
+        SetupMissingErr: Label 'Vendor Watch Setup does not exist.';
+        ConfiguredFailureErr: Label 'Configured failure for vendor %1.';
+        ProcessingFailedErr: Label 'Vendor processing failed.';
+
     trigger OnRun()
     begin
         ProcessPendingEntries();
@@ -12,7 +20,7 @@ codeunit 71006 "Vendor Watch Processor"
         ProcessedCount: Integer;
     begin
         if not VendorSetup.Get() then
-            Error('Vendor Watch Setup does not exist.');
+            Error(SetupMissingErr);
 
         if VendorSetup."Batch Size" <= 0 then
             exit;
@@ -50,7 +58,7 @@ codeunit 71006 "Vendor Watch Processor"
     begin
         if (Setup."Failure Vendor No." <> '') and
            (WatchEntry."Vendor No." = Setup."Failure Vendor No.") then
-            Error('Configured failure for vendor %1.', WatchEntry."Vendor No.");
+            Error(ConfiguredFailureErr, WatchEntry."Vendor No.");
     end;
 
     local procedure MarkAsSent(
@@ -72,7 +80,7 @@ codeunit 71006 "Vendor Watch Processor"
 
         ErrorText := GetLastErrorText();
         if ErrorText = '' then
-            ErrorText := 'Vendor processing failed.';
+            ErrorText := ProcessingFailedErr;
 
         WatchEntry."Error Message" := CopyStr(ErrorText, 1, MaxStrLen(WatchEntry."Error Message"));
 

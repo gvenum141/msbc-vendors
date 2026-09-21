@@ -1,4 +1,4 @@
-enum 71003 "Vendor Operation Type"
+enum 71000 "Vendor Operation Type"
 {
     Extensible = false;
 

@@ -1,4 +1,4 @@
-page 71012 "Vendor Watch Entries"
+page 71001 "Vendor Watch Entries"
 {
     PageType = List;
     SourceTable = "Vendor Watch Entry";

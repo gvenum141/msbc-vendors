@@ -1,4 +1,4 @@
-enum 71002 "Vendor Watch Status"
+enum 71001 "Vendor Watch Status"
 {
 
     Extensible = false;

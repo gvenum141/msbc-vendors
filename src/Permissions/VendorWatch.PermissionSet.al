@@ -1,4 +1,4 @@
-permissionset 71008 "Vendor Watch"
+permissionset 71001 "Vendor Watch"
 {
     Assignable = true;
     Caption = 'Vendor Watch';
@@ -6,10 +6,10 @@ permissionset 71008 "Vendor Watch"
     Permissions =
         tabledata "Vendor Watch Entry" = RIM,
         tabledata "Vendor Watch Setup" = RIM,
+        tabledata "Job Queue Entry" = RI,
         codeunit "Vendor Event Subscribers" = X,
-        //codeunit "Vendor Watch Install" = X,
+        codeunit "Vendor Watch Install" = X,
         codeunit "Vendor Watch Processor" = X,
-        //codeunit "Vendor Watch Tests" = X,
         page "Vendor Watch Entries" = X,
         page "Vendor Watch Entries API" = X,
         page "Vendor Watch Setup" = X;

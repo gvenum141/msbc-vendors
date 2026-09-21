@@ -1,3 +1,6 @@
+/// <summary>
+/// Stores the configuration for Vendor Watch.
+/// </summary>
 table 71000 "Vendor Watch Setup"
 {
     Caption = 'Vendor Watch Setup';

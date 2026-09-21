@@ -1,4 +1,7 @@
-page 71004 "Vendor Watch Setup"
+/// <summary>
+/// Configures the Vendor Watch processing settings.
+/// </summary>
+page 71002 "Vendor Watch Setup"
 {
     PageType = Card;
     SourceTable = "Vendor Watch Setup";
