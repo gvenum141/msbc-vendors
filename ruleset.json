@@ -1,0 +1,10 @@
+{
+    "name": "msbc-vendors ruleset",
+    "description": "Project-specific analyzer suppressions.",
+    "rules": [
+        {
+            "id": "AA0247",
+            "action": "None"
+        }
+    ]
+}

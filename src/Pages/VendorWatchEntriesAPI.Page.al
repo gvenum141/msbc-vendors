@@ -1,3 +1,6 @@
+/// <summary>
+/// Exposes vendor watch entries through the API.
+/// </summary>
 page 71000 "Vendor Watch Entries API"
 {
     PageType = API;

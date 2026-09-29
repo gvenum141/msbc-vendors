@@ -5,7 +5,7 @@ codeunit 71002 "Vendor Watch Processor"
 {
     var
         SetupMissingErr: Label 'Vendor Watch Setup does not exist.';
-        ConfiguredFailureErr: Label 'Configured failure for vendor %1.';
+        ConfiguredFailureErr: Label 'Configured failure for vendor %1.', comment = ' %1 = Vendor No.';
         ProcessingFailedErr: Label 'Vendor processing failed.';
 
     trigger OnRun()
