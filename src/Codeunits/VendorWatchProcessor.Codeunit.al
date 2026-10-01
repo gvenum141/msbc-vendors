@@ -39,9 +39,7 @@ codeunit 71002 "Vendor Watch Processor"
             until WatchEntry.Next() = 0;
     end;
 
-    local procedure ProcessEntry(
-    var WatchEntry: Record "Vendor Watch Entry";
-    Setup: Record "Vendor Watch Setup")
+    local procedure ProcessEntry(var WatchEntry: Record "Vendor Watch Entry"; Setup: Record "Vendor Watch Setup")
     begin
         ClearLastError();
 
@@ -52,17 +50,14 @@ codeunit 71002 "Vendor Watch Processor"
     end;
 
     [TryFunction]
-    local procedure TryProcessEntry(
-    var WatchEntry: Record "Vendor Watch Entry";
-    Setup: Record "Vendor Watch Setup")
+    local procedure TryProcessEntry(var WatchEntry: Record "Vendor Watch Entry"; Setup: Record "Vendor Watch Setup")
     begin
         if (Setup."Failure Vendor No." <> '') and
            (WatchEntry."Vendor No." = Setup."Failure Vendor No.") then
             Error(ConfiguredFailureErr, WatchEntry."Vendor No.");
     end;
 
-    local procedure MarkAsSent(
-    var WatchEntry: Record "Vendor Watch Entry")
+    local procedure MarkAsSent(var WatchEntry: Record "Vendor Watch Entry")
     begin
         WatchEntry.Status := Enum::"Vendor Watch Status"::Sent;
         WatchEntry."Processed Date Time" := CurrentDateTime();
@@ -70,9 +65,7 @@ codeunit 71002 "Vendor Watch Processor"
         WatchEntry.Modify();
     end;
 
-    local procedure HandleFailure(
-        var WatchEntry: Record "Vendor Watch Entry";
-        Setup: Record "Vendor Watch Setup")
+    local procedure HandleFailure(var WatchEntry: Record "Vendor Watch Entry"; Setup: Record "Vendor Watch Setup")
     var
         ErrorText: Text;
     begin
